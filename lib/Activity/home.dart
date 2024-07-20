@@ -11,13 +11,15 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   void getData() async{
-    get(url);
+    Response response = await get("https://api.restful-api.dev/objects" as Uri);
+    print(response.body);
   }
 
   int counter = 1;
   @override
   void initState() {
     super.initState();
+    getData();
   }
   @override
   void setState(VoidCallback fn) {
