@@ -9,9 +9,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  void getData(){
 
-
-
+  }
 
   int counter = 1;
   @override
