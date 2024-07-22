@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,6 +6,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int counter = 1;
   @override
   void initState() {
     super.initState();
@@ -30,7 +29,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    Map info = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Activity"),
@@ -39,9 +37,11 @@ class _HomeState extends State<Home> {
           Column(
             children: <Widget>[
               FloatingActionButton(
-                onPressed: () {},
+                onPressed: () => setState(() {
+                  counter += 1;
+                }),
               ),
-              Text(info["main_value"])
+              Text("$counter")
             ],
           )
 
